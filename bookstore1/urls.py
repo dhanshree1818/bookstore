@@ -13,8 +13,10 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+import registration
+from django.conf.urls import url
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
 from store import views
 
@@ -22,5 +24,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index),
     path('store/', views.store),
-
+    path('accounts/',include('registration.backends.default.urls'))
 ]

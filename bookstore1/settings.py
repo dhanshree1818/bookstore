@@ -42,6 +42,8 @@ INSTALLED_APPS = [
 
 ]
 
+INCLUDE_REGISTER_URL = True
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -126,3 +128,17 @@ STATIC_URL = '/static/'
 
 ACCOUNT_ACTIVATION_DAYS = 7
 REGISTRATION_AUTO_LOGIN = True
+
+ACCOUNT_AUTHENTICATED_REGISTRATION_REDIRECTS=True
+LOGIN_REDIRECT_URL = "/store/"
+INCLUDE_REGISTER_URL = True
+
+#Email Settings
+
+#EMAIL_BACKEND ="django.core.mail.backend.smtp.EmailBackend"
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_HOST_USER = "dhanshree1818@gmail.com"
+EMAIL_HOST_PASSWORD = "9769618768"
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL="books@mysterybooks.com"
