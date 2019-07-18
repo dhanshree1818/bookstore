@@ -22,7 +22,7 @@ from store import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    #path('', views.index),
+    path('', views.index, name='index'),
     path('store/', views.store),
     path('accounts/',include('registration.backends.default.urls'))
     #path('',include('social.apps.django_app.urls', namespace =  'social')),
