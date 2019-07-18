@@ -43,7 +43,7 @@ INSTALLED_APPS = [
 
 ]
 
-INCLUDE_REGISTER_URL = True
+#INCLUDE_REGISTER_URL = True
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -145,7 +145,7 @@ INCLUDE_REGISTER_URL = True
 
 #Email Settings
 
-#EMAIL_BACKEND ="django.core.mail.backend.smtp.EmailBackend"
+EMAIL_BACKEND ="django.core.mail.backend.smtp.EmailBackend"
 EMAIL_HOST = "smtp.gmail.com"
 EMAIL_HOST_USER = "dhanshree1818@gmail.com"
 EMAIL_HOST_PASSWORD = "9769618768"
