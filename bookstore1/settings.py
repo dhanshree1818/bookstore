@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-   # 'social.apps.django_app.default',
+    'social.apps.django_app.default',
     'store',
     'registration',
     'bootstrap3',
@@ -70,8 +70,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                #'social.apps.django_app.context_processors.backends',
-                #'social.apps.django_app.context_processors.login_redirect',
+                'social.apps.django_app.context_processors.backends',
+                'social.apps.django_app.context_processors.login_redirect',
 
             ],
         },
@@ -80,12 +80,17 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'bookstore1.wsgi.application'
 
-'''
-AUTHENTICATION_BACKENDS= (
-    'social.backends.facebook.FacebookOAuth2',
-    'django.contrib.auth.backends.ModelBackend'
-
-)'''
+AUTHENTICATION_BACKENDS= {
+    'social_core.backends.github.GithubOAuth2',
+    'social_core.backends.facebook.FacebookOAuth2',
+    'social_core.backends.open_id.OpenIdAuth',
+    'social_core.backends.google.GoogleOpenId',
+    'social_core.backends.google.GoogleOAuth2',
+    'social_core.backends.google.GoogleOAuth',
+    'social_core.backends.twitter.TwitterOAuth',
+    'social_core.backends.yahoo.YahooOpenId',
+    'django.contrib.auth.backends.ModelBackend',
+}
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
@@ -154,9 +159,8 @@ EMAIL_HOST_PASSWORD = "9769618768"
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL="books@mysterybooks.com"
-'''
+
 #Social Auth-Facebook
 
-SOCIAL_AUTH_FACEBOOK_KEY=''
-SOCIAL_AUTH_FACEBOOK_SECRET=''
-'''
+SOCIAL_AUTH_GITHUB_KEY='28f7bf14b33dc2f92b88'
+SOCIAL_AUTH_GITHUB_SECRET='993dc4c0d4b4aa17152981d201b0896f33ee4ec3'
